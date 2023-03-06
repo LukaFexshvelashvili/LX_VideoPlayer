@@ -3,16 +3,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>LX Player</title>
   </head>
   <body>
     <div class="LX_container">
+      <div class="LX_controls_error">
+        <div class="LX_controls_error_block">VIDEO CANT BE LOADED</div>
+      </div>
       <div class="LX_thumbnail_play">
         <div class="LX_thumbnail_play_icon"></div>
       </div>
       <div class="LX_thumbnail">
-        <img id="LX_thumbnail_image" src="./banner.jpg" alt="player_banner" />
+        <img
+          id="LX_thumbnail_image"
+          src="./images//banner.jpg"
+          alt="player_banner"
+        />
       </div>
       <div id="LX_contextmenu" class="LX_contextmenu">
         <a href="">
@@ -148,11 +155,11 @@
 
       <video
         id="LX_video"
-        src="https://cdn17.croconet.ge/serial/Demon-Slayer-Kimetsu-no-Yaiba/sezon-1/24_Epizodi_6a00.mp4"
+        src="https://cdn17.croconet.ge/serial/Demon-Slayer-Kimetsu-no-Yaiba/sezon-1/24_Epizodi_600.mp4"
       ></video>
     </div>
 
-    <script src="./LX_Player.js"></script>
+    <script src="./engine/LX_Player.js"></script>
     <script>
       LX_VideoID = 4;
     </script>

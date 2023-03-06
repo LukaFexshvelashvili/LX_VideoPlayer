@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: main;
-  src: url("./Lexend-Regular.ttf");
+  src: url("../fonts/Lexend-Regular.ttf");
 }
 body {
   margin: 0;
@@ -22,6 +22,26 @@ body .LX_container {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+body .LX_container .LX_controls_error {
+  user-select: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(6, 6, 34, 0.335);
+  color: white;
+  font-size: 14px;
+  font-family: main;
+  letter-spacing: 2px;
+  z-index: 999;
+}
+body .LX_container .LX_controls_error .LX_controls_error_block {
+  padding: 20px;
+  background: rgb(6, 6, 34);
+  border-radius: 10px;
 }
 body .LX_container .LX_contextmenu {
   display: none;

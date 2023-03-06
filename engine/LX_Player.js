@@ -5,6 +5,7 @@ let LX_control = document.querySelector(".LX_control");
 
 let LX_video = document.getElementById("LX_video");
 let LX_mini_video = document.getElementById("LX_mini_video");
+let LX_controls_error = document.querySelector(".LX_controls_error");
 
 let LX_play_pause_svg = document.getElementById("LX_play_pause_svg");
 
@@ -88,7 +89,8 @@ function LX_Color(color) {
 }
 // WHEN VIDEO LOADS
 let videoLoad = 1;
-LX_video.addEventListener("error", function (e) {
+LX_video.addEventListener("error", function () {
+  LX_controls_error.style.display = "flex";
   videoLoad = 0;
 });
 
