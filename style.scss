@@ -1,0 +1,321 @@
+:root {
+    --LX_Main_Color: #00ed82;
+    --LX_See_Line_Color: #a9a9a9;
+}
+@font-face {
+    font-family: main;
+    src: url("./Lexend-Regular.ttf");
+}
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .LX_container {
+        overflow: hidden;
+        height: 500px;
+        aspect-ratio: 16 / 9;
+        background-color: #000000;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .LX_contextmenu {
+            display: none;
+            border-radius: 5px;
+            background-color: rgb(6, 6, 34);
+            position: absolute;
+            z-index: 999;
+            a {
+                height: 100%;
+                width: 100%;
+                padding: 4px 8px;
+
+                text-decoration: none;
+                .LX_contextmenu_option {
+                    color: white;
+                    font-size: 11px;
+                    font-family: main;
+                }
+            }
+        }
+        .LX_thumbnail {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            height: 100%;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+            z-index: 9;
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                filter: brightness(0.6);
+            }
+        }
+        .LX_control {
+            display: flex;
+            justify-content: center;
+            user-select: none;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            z-index: 6;
+            transition: 0.2s;
+            &::after {
+                content: "";
+                height: 50px;
+                width: 100%;
+                z-index: 3;
+                bottom: 0;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+                position: absolute;
+            }
+            .LX_control_container {
+                width: 98%;
+                position: relative;
+                z-index: 6;
+            }
+            .LX_timer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                display: none;
+                position: absolute;
+                height: 60px;
+                aspect-ratio: 16 / 9;
+                top: -70px;
+                border-radius: 5px;
+                background-color: rgb(6, 6, 34);
+                color: white;
+                font-size: 11px;
+                font-family: main;
+                transition: opacity 0.3s;
+                letter-spacing: 1px;
+                user-select: none;
+                video {
+                    position: absolute;
+                    height: 100%;
+                    z-index: 1;
+                    border-radius: 5px;
+                }
+                span {
+                    background-color: rgb(6, 6, 34);
+                    position: absolute;
+                    bottom: -10px;
+                    z-index: 2;
+                    padding: 2px 4px;
+                    border-radius: 5px;
+                }
+            }
+
+            .LX_slider {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                position: relative;
+                cursor: pointer;
+                height: 12px;
+                user-select: none;
+
+                .LX_main_slider {
+                    width: 100%;
+                    height: 4px;
+                    border-radius: 20px;
+                    background: rgb(74, 74, 74);
+                    position: absolute;
+                    z-index: 1;
+                    transition: 0.3s;
+                    &:hover {
+                        transform: scaleY(1.6);
+                        .LX_slider_progress::after {
+                            opacity: 1;
+                        }
+                    }
+                    .LX_slider_progress {
+                        position: absolute;
+                        cursor: pointer;
+                        border-radius: 20px;
+                        width: 0%;
+                        height: 100%;
+                        background: var(--LX_Main_Color);
+                        z-index: 2;
+                        display: flex;
+                        align-items: center;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            width: 8px;
+                            aspect-ratio: 1;
+                            background: var(--LX_Main_Color);
+                            border-radius: 50%;
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+                            z-index: 1;
+                            right: -4px;
+                            transform: scaleX(1.6);
+                            opacity: 0;
+                            transition: 0.2s;
+                        }
+                    }
+                    .LX_slider_progress_see {
+                        position: absolute;
+                        cursor: pointer;
+                        border-radius: 20px;
+                        width: 0%;
+                        height: 100%;
+                        background: var(--LX_See_Line_Color);
+                        z-index: 1;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+            .LX_control_buttons {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                height: 22px;
+                aspect-ratio: 1;
+                cursor: pointer;
+                svg {
+                    height: 100%;
+                }
+            }
+            .LX_controls_row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 30px;
+                padding: 0 5px;
+                padding-bottom: 7px;
+                padding-top: 2px;
+
+                .LX_starter_controls {
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    width: 200px;
+                    gap: 6px;
+                    .LX_control_step_back {
+                        transform: rotate(180deg);
+                    }
+
+                    .LX_control_sound {
+                        height: 24px;
+                        margin-left: 6px;
+                        display: flex;
+                        justify-content: center;
+
+                        .LX_control_play_adjust {
+                            opacity: 0;
+                            transform-origin: bottom;
+                            display: none;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 10px 5px;
+                            position: absolute;
+                            bottom: 50px;
+                            height: 100px;
+                            border-radius: 5px;
+                            width: 20px;
+                            background-color: rgb(6, 6, 34);
+                            z-index: 9;
+                            transition: opacity 0.1s;
+                            &:hover {
+                                display: flex;
+                            }
+                            .LX_control_play_adjuster_container {
+                                height: 92%;
+                                position: relative;
+                                display: flex;
+                                justify-content: center;
+                                bottom: 0;
+                                width: 100%;
+                                .LX_control_play_adjuster {
+                                    display: flex;
+                                    justify-content: center;
+                                    position: absolute;
+                                    height: 100%;
+                                    width: 5px;
+                                    border-radius: 10px;
+                                    background: var(--LX_Main_Color);
+                                    pointer-events: none;
+                                    z-index: 1;
+                                    bottom: 0;
+                                    &::after {
+                                        content: "";
+                                        height: 11px;
+                                        aspect-ratio: 1;
+                                        border-radius: 50%;
+                                        background: var(--LX_Main_Color);
+                                        position: absolute;
+                                        top: -6px;
+                                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                                    }
+                                }
+                                .LX_control_play_adjuster_empty {
+                                    position: absolute;
+                                    height: 100%;
+                                    width: 5px;
+                                    border-radius: 10px;
+                                    background-color: rgb(30, 30, 75);
+
+                                    z-index: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+                .LX_end_controls {
+                    .LX_control_fullscreen {
+                        height: 20px;
+                    }
+                }
+                .LX_video_time {
+                    display: flex;
+                    align-items: center;
+                    color: white;
+                    font-family: main;
+                    margin-left: 20px;
+                    gap: 3px;
+                    font-size: 13px;
+                }
+            }
+        }
+        video {
+            position: absolute;
+
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .LX_thumbnail_play {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 65px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: var(--LX_Main_Color);
+        z-index: 11;
+        transition: opacity 0.3s;
+        cursor: pointer;
+        box-shadow: 0 0 60px rgba(0, 0, 0, 0.4);
+        .LX_thumbnail_play_icon {
+            transform: translateX(4px);
+            width: 0;
+            height: 0;
+            border-bottom: 15px solid transparent;
+            border-left: 25px solid white;
+            border-right: 0px solid transparent;
+            border-top: 15px solid transparent;
+
+            margin: 2rem;
+        }
+    }
+}

@@ -1,0 +1,160 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>LX Player</title>
+  </head>
+  <body>
+    <div class="LX_container">
+      <div class="LX_thumbnail_play">
+        <div class="LX_thumbnail_play_icon"></div>
+      </div>
+      <div class="LX_thumbnail">
+        <img id="LX_thumbnail_image" src="./banner.jpg" alt="player_banner" />
+      </div>
+      <div id="LX_contextmenu" class="LX_contextmenu">
+        <a href="">
+          <div id="LX_contextmenu" class="LX_contextmenu_option">
+            LX Player v2.2
+          </div>
+        </a>
+      </div>
+      <div class="LX_control">
+        <div class="LX_control_container">
+          <div class="LX_timer">
+            <video
+              id="LX_mini_video"
+              src="https://cdn17.croconet.ge/serial/Demon-Slayer-Kimetsu-no-Yaiba/sezon-1/24_Epizodi_600.mp4"
+              muted
+            ></video>
+            <span id="LX_timer_change"> 00:00 </span>
+          </div>
+
+          <div class="LX_slider">
+            <div class="LX_main_slider">
+              <div class="LX_slider_progress"></div>
+              <div class="LX_slider_progress_see"></div>
+            </div>
+          </div>
+          <div class="LX_controls_row">
+            <div class="LX_starter_controls">
+              <div class="LX_control_buttons LX_control_step_back">
+                <svg
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffffff"
+                  class="bi bi-skip-end-fill"
+                >
+                  <path
+                    d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.693 3.3 4 3.678 4 4.308v7.384c0 .63.692 1.01 1.233.697L11.5 8.753V12a.5.5 0 0 0 1 0V4z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="LX_control_buttons LX_control_play">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="#ffffff"
+                >
+                  <path
+                    id="LX_play_pause_svg"
+                    d="M8.286 3.407A1.5 1.5 0 0 0 6 4.684v14.632a1.5 1.5 0 0 0 2.286 1.277l11.888-7.316a1.5 1.5 0 0 0 0-2.555L8.286 3.407z"
+                    fill="#ffffff"
+                    height="20"
+                  ></path>
+                </svg>
+              </div>
+              <div class="LX_control_buttons LX_control_step_forward">
+                <svg
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffffff"
+                  class="bi bi-skip-end-fill"
+                >
+                  <path
+                    d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.693 3.3 4 3.678 4 4.308v7.384c0 .63.692 1.01 1.233.697L11.5 8.753V12a.5.5 0 0 0 1 0V4z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="LX_control_buttons LX_control_sound">
+                <div class="LX_control_play_adjust">
+                  <div class="LX_control_play_adjuster_container">
+                    <div class="LX_control_play_adjuster"></div>
+                    <div class="LX_control_play_adjuster_empty"></div>
+                  </div>
+                </div>
+
+                <svg
+                  id="LX_control_sound_icon"
+                  viewBox="0 0 512 512"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  fill="#000000"
+                  stroke="#000000"
+                >
+                  <g
+                    id="Page-1"
+                    stroke-width="0.00512"
+                    fill="none"
+                    fill-rule="evenodd"
+                  >
+                    <g
+                      id="icon"
+                      fill="#ffffff"
+                      transform="translate(42.666667, 85.333333)"
+                    >
+                      <path
+                        d="M361.299413,341.610667 L328.014293,314.98176 C402.206933,233.906133 402.206933,109.96608 328.013013,28.8906667 L361.298133,2.26304 C447.910187,98.97536 447.908907,244.898347 361.299413,341.610667 Z M276.912853,69.77216 L243.588693,96.4309333 C283.38432,138.998613 283.38304,204.87488 243.589973,247.44256 L276.914133,274.101333 C329.118507,215.880107 329.118507,127.992107 276.912853,69.77216 Z M191.749973,1.42108547e-14 L80.8957867,87.2292267 L7.10542736e-15,87.2292267 L7.10542736e-15,257.895893 L81.0208,257.895893 L191.749973,343.35424 L191.749973,1.42108547e-14 L191.749973,1.42108547e-14 Z"
+                        id="Shape"
+                      ></path>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <div class="LX_video_time">
+                <span class="LX_current_time">99:99</span>
+
+                /
+
+                <span class="LX_full_time">99:99</span>
+              </div>
+            </div>
+            <div class="LX_end_controls">
+              <div class="LX_control_buttons LX_control_fullscreen">
+                <svg
+                  height="14px"
+                  version="1.1"
+                  fill="#ffffff"
+                  viewBox="0 0 14 14"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <path
+                    id="LX_control_fullscreen_svg"
+                    d="M2,9 L0,9 L0,14 L5,14 L5,12 L2,12 L2,9 L2,9 Z M0,5 L2,5 L2,2 L5,2 L5,0 L0,0 L0,5 L0,5 Z M12,12 L9,12 L9,14 L14,14 L14,9 L12,9 L12,12 L12,12 Z M9,0 L9,2 L12,2 L12,5 L14,5 L14,0 L9,0 L9,0 Z"
+                    id="Shape"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <video
+        id="LX_video"
+        src="https://cdn17.croconet.ge/serial/Demon-Slayer-Kimetsu-no-Yaiba/sezon-1/24_Epizodi_6a00.mp4"
+      ></video>
+    </div>
+
+    <script src="./LX_Player.js"></script>
+    <script>
+      LX_VideoID = 4;
+    </script>
+  </body>
+</html>
