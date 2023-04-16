@@ -176,6 +176,7 @@ body {
                             box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
                             z-index: 1;
                             right: -4px;
+                            pointer-events: none;
                             transform: scaleX(1.6);
                             opacity: 0;
                             transition: 0.2s;
